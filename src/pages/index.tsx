@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import Banner from '../components/Banner';
 import TravelTypes from '../components/TravelTypes';
 import Separator from '../components/Separator';
+import Slider from '../components/Slider';
 
 export default function Home() {
   return (
@@ -22,6 +23,8 @@ export default function Home() {
         <Text mb="3">Vamos nessa?</Text>
         <Text>Então escolha seu continente</Text>
       </Heading>
+
+      <Slider />
     </Flex>
   );
 }
