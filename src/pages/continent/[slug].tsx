@@ -4,11 +4,15 @@ import Header from "../../components/Header";
 import ContinentBanner from "../../components/ContinentBanner";
 import Content from "../../components/Content";
 import Cities from "../../components/Cities";
+import Loading from "../../components/Loading";
 
 import { GetStaticPaths, GetStaticProps } from "next";
+import { useRouter } from "next/router";
+
 import { getPrismicClient } from "../../services/prismic";
 import Prismic from '@prismicio/client';
 import { RichText } from 'prismic-dom';
+import Head from "next/head";
 
 export interface ContinentProps {
   continent: {
@@ -30,8 +34,17 @@ export interface ContinentProps {
 }
 
 export default function Continent({ continent }: ContinentProps) {
+  const router = useRouter();
+  if (router.isFallback) {
+    return <Loading />
+  }
+
   return (
     <Flex direction="column">
+      <Head>
+        <title>WorldTrip - {continent.title}</title>
+      </Head>
+
       <Header />
       <ContinentBanner continent={continent} />
       
