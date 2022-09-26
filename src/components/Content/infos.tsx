@@ -2,7 +2,9 @@ import { Flex, Heading, Icon, Popover, PopoverArrow, PopoverBody, PopoverCloseBu
 
 import { RiInformationLine } from 'react-icons/ri';
 
-export default function Infos(){
+import { ContinentProps } from "../../pages/continent/[slug]";
+
+export default function Infos({ continent }: ContinentProps){
   return (
     <Flex align="center" justifyContent="space-between">
       <Flex
@@ -15,7 +17,7 @@ export default function Infos(){
           fontWeight="500"
           fontSize={["2xl", "5xl"]}
         >
-          50
+          {continent.countries}
         </Heading>
         <Text
           color="gray.700"
@@ -34,7 +36,7 @@ export default function Infos(){
           fontWeight="500"
           fontSize={["2xl", "5xl"]}
         >
-          60
+          {continent.languages}
         </Heading>
         <Text
           color="gray.700"
@@ -53,7 +55,7 @@ export default function Infos(){
           fontWeight="500"
           fontSize={["2xl", "5xl"]}
         >
-          27
+          {continent.cities}
         </Heading>
         <Text
           color="gray.700"
@@ -80,7 +82,7 @@ export default function Infos(){
               <PopoverArrow bg="gray.700"/>
               <PopoverCloseButton />
               <PopoverBody fontWeight="400" fontSize="lg">
-                Londres, Paris, Roma, Praga, Amsterdã e etc...
+                {continent.cities_list}
               </PopoverBody>
             </PopoverContent>
           </Popover>

@@ -1,8 +1,10 @@
 import { Grid, Heading } from "@chakra-ui/react";
 
+import { ContinentProps } from "../../pages/continent/[slug]";
+
 import City from "./city";
 
-export default function Cities(){
+export default function Cities({ continent }: ContinentProps) {
   return (
     <>
       <Heading fontWeight="500" fontSize={["2xl", "4xl"]} mb="10">
@@ -16,7 +18,15 @@ export default function Cities(){
         justifyContent="center"
         px={["30px", "0"]}
       >
-        <City />
+        {continent.cities100.map(city => (
+          <City 
+            key={city.city}
+            name={city.city}
+            country={city.country}
+            image={city.thumbnail}
+            flag={city.flag}
+          />
+        ))}
       </Grid>
     </>
   );
