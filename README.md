@@ -29,7 +29,7 @@
 
 <p align="justify">O <strong>Worldtrip</strong> é uma aplicação voltada ao <strong>Blog Turístico</strong> exibindo o que cada continente tem a oferecer, assim como as cidades mais famosas, total de países e as linguagens.</p>
 
-<p align="justify">Essa aplicação SpaceTraveling foi desenvolvida, através de um desafio feito pelo Bootcamp Ignite na trilha de ReactJS.</p>
+<p align="justify">Essa aplicação Worldtrip foi desenvolvida, através de um desafio feito pelo Bootcamp Ignite na trilha de ReactJS.</p>
 
 ### :pushpin: Funcionalidades
 
